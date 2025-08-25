@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/device-check-standalone',
-  assetPrefix: '/device-check-standalone/',
+  basePath: process.env.NODE_ENV === 'production' ? '/device-check-standalone' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/device-check-standalone/' : '',
 };
 
 export default nextConfig;
